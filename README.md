@@ -17,3 +17,8 @@ En la ruta inicial
 ##### $ npm i
 
 ##### $ npm run start
+
+
+
+## Pequeña Documentacion del API 
+##### https://documenter.getpostman.com/view/12706379/UV5WEJNs
