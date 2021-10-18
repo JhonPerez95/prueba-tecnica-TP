@@ -1,17 +1,19 @@
-# El Proyecto esta divido en 2 , el Api (Backend) y la raiz del proyecto que es aplicacion web React
+# El Proyecto esta divido en 2
 
+## 1 Backend - Iniciar API
 
-## Primero Iniciar API 
-Entramos a la ruta Api 
-$ cd Api
-$ npm i 
-$ npm run start
+Entramos a la ruta Api
 
+##### $ cd Api
 
+##### $ npm i
 
-## Segundo  Iniciar aplicacion web  
+##### $ npm run start
 
-En la ruta inicial 
+## 2 - Frontend - Iniciar aplicacion web
 
-$ npm i 
-$ npm run start
+En la ruta inicial
+
+##### $ npm i
+
+##### $ npm run start
