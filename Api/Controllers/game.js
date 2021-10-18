@@ -1,26 +1,34 @@
 const axios = require('axios')
 const fs = require('fs')
 
+const { configAccToken } = require('../config/cofnig')
 
 // Leer Json
-const getDataJson = ()=>{
+const getDataJson = () => {
     let json_games = fs.readFileSync('games.json', 'utf-8')
-    return games = JSON.parse(json_games)
+    return (games = JSON.parse(json_games))
 }
 
+// Traer Todos los juegos (20) del API de Twitch
 const getGame = async (req, res) => {
+    // aut-token
+    const { data } = await axios(configAccToken)
+    const { access_token } = data
+
+    console.log('Token Access: ' + access_token)
+
     const configGetGame = {
         method: 'GET',
         url: 'https://api.twitch.tv/helix/games/top',
         headers: {
             'client-id': '3mw1zye8ip5qv70h1zid01fwz4m5yi',
-            Authorization: `Bearer 8b8lx8e7zd9pinsstr04uka33rz9gg`,
+            Authorization: `Bearer ${access_token}`,
         },
     }
     const { data: dataGames } = await axios(configGetGame)
-    const { data } = dataGames
+    const { data: arrayGamesAPi } = dataGames
 
-    const arrGames = data.map((item) => ({
+    const arrGames = arrayGamesAPi.map((item) => ({
         id: item.id,
         name: item.name,
         img: item.box_art_url.replace('{width}x{height}', '400x400'),
